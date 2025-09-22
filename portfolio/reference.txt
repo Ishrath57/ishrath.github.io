@@ -1,0 +1,93 @@
+Ishrath Jahan
+Hartford, CT
+Cell:  (850) 786 8390   
+ishrathjahan075@gmail.com 
+
+PROFESSIONAL SUMMARY	
+Detail-oriented Analyst integrating advanced data analytics, statistical modelling, and business intelligence tools with hands-on experience across IT and healthcare domains. Adept at collaborating within multi-disciplinary teams to drive performance improvements, optimize supply chains, support client projects, and build effective data-driven solutions. Proven ability to deliver actionable insights, guide healthcare systems, and participate in all phases of project and practice development, from requirements gathering to implementation and knowledge sharing. 
+
+EDUCATION	
+Master’s in Data Science (Analytics & Modelling)                                                                                                             Jan. 2023 – Dec. 2024
+University of West Florida, Florida, USA
+Overall GPA: 3.60/4
+	 
+Bachelor of Engineering in Information Technology	 June 2012 – Sept 2016 
+Osmania University, Hyderabad, India
+
+TECHNICAL SKILLS	
+Programming expertise: C, C++, Dot Net, Python, R, SAS, 
+ML Libraries/Frameworks: TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn, PyTorch, scikit-learn
+BI & Analytics Tools: Tableau, Power BI, R studio, Microsoft Access 
+AI/ML Concepts: Supervised/Unsupervised Learning, Feature Engineering, Overfitting Mitigation, Cross-Validation, Hyperparameter Tuning, Retrieval-Augmented Generation (RAG)
+Development & Deployment Tools: Jupyter Notebook, Git, Docker, FastAPI, Stremlit
+Domain Expertise: Data Analytics, Data Processing, Data Visualization, Machine Learning, Deep Learning, Artificial Intelligence, Trend Analysis
+Databases: SQL Server, Oracle, MySQL, Stored Procedure 
+Excel (Advanced): Pivot Tables, Macros, VLOOKUP, Conditional Formatting, Nested Formulas, Charts
+
+EXPERIENCE	 
+Title: Data Science Intern                                                                                                                                                          July 2025 – Present
+Organization: SOMA TECHNOLOGY INTERNATIONAL INC                                                                                                                              CT, USA
+
+    • Support healthcare advisory projects by compiling, cleaning, and analyzing sales, procurement, and service data for operational performance. 
+    • Assist in developing predictive models for inventory management and customer trends using machine learning techniques. 
+    • Create visualizations and reports for stakeholders under the guidance of senior data scientists and analysts.  
+    • Apply Python and data science libraries to conduct exploratory data analysis and build proofs-of-concept for business solutions.
+    • Work in consulting teams to gather client requirements and synthesize findings into recommendations and presentations.
+
+
+
+
+Title: Data Science Intern                                                                                                                                                          Feb. 2025 – May 2025
+Organization: Rheem Manufacturing                                                                                                                                             Alabama, USA
+    • Developed an automated Gas leakage detection system that monitors 10,000 gas drums daily in a production line using YOLOv12. 
+    • Implemented and trained multiple detection classes, including CenterLeak, SideSeam, Respray, Coupling, and twelve other leak types, for comprehensive defect identification.
+    • Built a real-time monitoring system with Streamlit-based frontend integrated with Flask API for instant alerts and continuous surveillance. 
+    • Utilized threading to implement dual-camera functionality on a single production line, enabling simultaneous monitoring and detection. 
+    • Diagnosed and improved AI model performance by applying cross-validation, regularization, and hyperparameter tuning to address issues like overfitting.
+    • Designed interactive Power BI dashboards to track key metrics, collaborating with cross-functional teams to support data-driven decisions and transparent impact reporting. 
+    • Trained and fine-tuned a YOLO (You Only Look Once) object detection model to improve accuracy in identifying both the presence and type of damage in packaging parcel images, including classification across different categories of packaging cartons.
+
+Title: Research Assistant                                                                                                                                                        June 2024 – Oct. 2024 
+University of West Florida                                                                                                                                                               Florida, USA
+    • Conducted AI research on prompt engineering and model optimization under faculty supervision, investigating advanced methods to refine AI model outputs and elevate human-AI dialogue.
+    • Developed an AI-powered personalized assistant for women’s hormonal health, leveraging AWS Bedrock
+with fine-tuned LLMs to deliver customized, evidence-based recommendations.
+    • Supported requirements analysis, stakeholder engagement, and process improvement using machine learning, RAG architectures, and cloud-based tools 
+    • Handled missing data by imputing values (e.g., mean/median imputation, regression-based methods) or excluding incomplete records, based on project requirements.
+Title: AI Engineer,                                                                                                                                                                    Aug. 2020 – Dec. 2022                            
+Organization: Sigmatrix                                                                                                                                	                            Hyderabad, India
+    • Managed and organized large datasets from multiple sources in relational databases, ensuring data accuracy and accessibility for research and business applications.
+    • Performed sell-through rate analysis to evaluate product performance and inventory management. 
+    • Developed comprehensive dashboards using Power BI  to present data insights visually and interactively.
+    • Collaborated with cross-functional teams to gather reporting requirements and delivered tailored Workday reports to meet specific business needs promptly. 
+    • Preprocessed manufacturing datasets with Python (pandas, numpy), handling missing values and outliers to improve model accuracy.
+    • Created SQL queries for data extraction and validation; collaborated with cross-functional teams on business intelligence reporting projects.
+Title: Software Engineer – IT/Analyst		                                                                                                March 2017 – July 2020
+Organization: WEBENGERS Technology Pvt Ltd                                                                                                                Hyderabad, India		
+    • Provided analytical support to healthcare system improvement initiatives by conducting data-driven analyses and assisting clients in implementing strategic recommendations, contributing to billable project revenue.
+    •  Collaborated cross-functionally to support integration, troubleshooting, and agile project delivery for IT and healthcare clients.
+    • Designed, developed, and deployed predictive models and algorithms to extract value from large, complex healthcare datasets; collaborated with developers and product engineers to deliver scalable solutions. 
+    • Supported BI and product teams with custom scripting, technical documentation, and process automation. 
+
+PROJECTS:
+Automated Gas Leakage Detection System 
+    • Built a real-time gas leak detection system using YOLOv12, monitoring 10,000 gas drums in a production line.
+    • Developed a Streamlit-based front-end integrated with a Flask API for real-time alerts and monitoring. 
+    • Tools and Technologies Used: Roboflow, YOLOv12, Streamlit, MongoDB, Docker.
+AI-Powered Music Valuation Engine 
+    • Developed comprehensive calculation algorithms for music catalog valuation, processing royalty data, streaming statistics, and historical performance to determine track and catalog values using BigQuery data warehousing.
+    • Implemented predictive analytics and ARIMA time series modeling for future earnings forecasting based on streaming trends, market data, and artist performance metrics across multiple platforms. 
+    • Built scalable FastAPI-based microservices with Redis caching and concurrent processing using ThreadPoolExecutor to handle high-volume valuation requests efficiently.
+    • Tools and Technologies Used: Python, FastAPI, Google Cloud BigQuery, Docker, Redis, Pandas, NumPy, ARIMA, Statsmodels.
+Personalized AI Bot for Women’s Hormonal Health		
+    • Developed an AI-powered personalized assistant for women’s hormonal health, leveraging AWS Bedrock with fine-tuned LLMs to deliver customized, evidence-based recommendations. 
+    • Implemented a RAG-based (Retrieval-Augmented Generation) architecture, enhancing response accuracy by integrating domain-specific knowledge. 
+    • Engineered a scalable and secure deployment using Docker and AWS EC2, ensuring high availability and efficient model serving. 
+    • Tools and Technologies Used: AWS Bedrock, Fine-Tuned LLMs, RAG, Docker, EC2, Python.
+CERTIFICATIONS	
+    • DeepLearning.AI: Deep Learning Specialization in July 2024
+    • Programming in Python as part of PG Diploma in Data Science, December 2023
+    • Gained in-depth understanding of Microsoft Power BI in 2022 from Simplilearn 
+    • Completed "Big Data Mining: A Managerial Approach" course from Satya Technologies in 2022
+
+
