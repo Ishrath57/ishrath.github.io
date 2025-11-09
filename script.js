@@ -267,3 +267,165 @@ revealStyle.textContent = `
     }
 `;
 document.head.appendChild(revealStyle);
+// Modal for Project Demo
+document.addEventListener('DOMContentLoaded', () => {
+    // Open Modal
+    const projectCards = document.querySelectorAll('.project-card[data-modal]');
+    projectCards.forEach(card => {
+        const demoBtn = card.querySelector('.demo-btn');
+        const modalId = card.getAttribute('data-modal');
+        const modal = document.getElementById(`modal-${modalId}`);
+
+        demoBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+
+        // Close Modal
+        const closeBtn = modal.querySelector('.close-btn');
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close on outside click
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
+    /// ========== E-Commerce Chatbot Modal ==========
+const ecommerceModal = document.getElementById('modal-ecommerce-bot');
+const openEcommerceBtn = document.querySelector('[data-modal="ecommerce-bot"] .demo-btn');
+const closeEcommerceBtn = ecommerceModal.querySelector('.close-btn');
+const botInput = document.getElementById('bot-query');
+const botSubmit = document.getElementById('bot-submit');
+const botResponse = document.getElementById('bot-response');
+
+// Open modal
+openEcommerceBtn.addEventListener('click', () => {
+    ecommerceModal.style.display = 'block';
+    botInput.focus();
+});
+
+// Close modal
+closeEcommerceBtn.addEventListener('click', () => {
+    ecommerceModal.style.display = 'none';
+});
+window.addEventListener('click', (e) => {
+    if (e.target === ecommerceModal) {
+        ecommerceModal.style.display = 'none';
+    }
+});
+
+// Mock AI Response (replace with real API later)
+botSubmit.addEventListener('click', sendBotQuery);
+botInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendBotQuery();
+});
+
+function sendBotQuery() {
+    const query = botInput.value.trim();
+    if (!query) return;
+
+    botResponse.innerHTML = '<em>Thinking...</em>';
+
+    // Simulated AI responses
+    setTimeout(() => {
+        let reply = '';
+        const lower = query.toLowerCase();
+
+        if (lower.includes('ship') || lower.includes('delivery')) {
+            reply = 'We ship to over 50 countries! Standard shipping: 5–7 days. Express: 2–3 days. Free shipping on orders over $50.';
+        } else if (lower.includes('return') || lower.includes('refund')) {
+            reply = '30-day return policy. Items must be unused with original tags. Return shipping is free for defective items.';
+        } else if (lower.includes('size') || lower.includes('fit')) {
+            reply = 'Check our size guide in the product page. Most customers find our sizes run true to standard US sizing.';
+        } else if (lower.includes('payment') || lower.includes('pay')) {
+            reply = 'We accept Credit Cards, PayPal, Apple Pay, and Google Pay. All transactions are secure and encrypted.';
+        } else {
+            reply = 'I’m here to help! Try asking about shipping, returns, sizing, or payments.';
+        }
+
+        botResponse.innerHTML = `<strong>You:</strong> ${query}<br><br><strong>Bot:</strong> ${reply}`;
+        botInput.value = '';
+    }, 800);
+}
+});
+// ========== Music Valuation Demo Modal ==========
+const musicModal = document.getElementById('modal-music-valuation');
+const openMusicBtn = document.querySelector('[data-modal="music-valuation"] .demo-btn');
+const closeMusicBtn = musicModal.querySelector('.close-btn');
+const valSubmit = document.getElementById('val-submit');
+const valResponse = document.getElementById('val-response');
+
+// Open modal
+openMusicBtn.addEventListener('click', () => {
+    musicModal.style.display = 'block';
+});
+
+// Close modal
+closeMusicBtn.addEventListener('click', () => {
+    musicModal.style.display = 'none';
+});
+window.addEventListener('click', (e) => {
+    if (e.target === musicModal) {
+        musicModal.style.display = 'none';
+    }
+});
+
+// Valuation Calculation (Simplified ARIMA/DCF Simulation)
+valSubmit.addEventListener('click', calculateValuation);
+
+function calculateValuation() {
+    const artist = document.getElementById('artist-name').value || 'Unknown Catalog';
+    const royalties = parseFloat(document.getElementById('current-royalties').value) || 0;
+    const streams = parseFloat(document.getElementById('monthly-streams').value) || 0;
+    const growth = parseFloat(document.getElementById('growth-rate').value) || 0;
+
+    if (royalties <= 0 || streams <= 0) {
+        valResponse.innerHTML = '<em style="color: red;">Please enter valid positive numbers.</em>';
+        return;
+    }
+
+    // Mock ARIMA forecast: Project 5-year earnings (growth compounded, streams-to-royalty conversion ~$0.004/stream)
+    const streamRoyalties = streams * 12 * 0.004; // Annual from streams
+    const totalCurrent = royalties + streamRoyalties;
+    const discountRate = 0.08; // Industry standard WACC for music catalogs
+    let futureValue = 0;
+
+    for (let year = 1; year <= 5; year++) {
+        const projected = totalCurrent * Math.pow(1 + growth / 100, year);
+        futureValue += projected / Math.pow(1 + discountRate, year);
+    }
+
+    const catalogValue = futureValue * 12; // Multiplier for perpetuity-like value (industry avg ~10-15x)
+    const irr = ((catalogValue / totalCurrent) * 100).toFixed(1); // Simple IRR estimate
+
+    valResponse.innerHTML = `
+        <strong>Catalog:</strong> ${artist}<br>
+        <strong>Current Annual Earnings:</strong> $${totalCurrent.toLocaleString()}<br><br>
+        <strong>5-Year Projected Value (ARIMA Forecast):</strong> $${futureValue.toLocaleString()}<br>
+        <strong>Estimated Catalog Value:</strong> $${catalogValue.toLocaleString()}<br>
+        <strong>Est. IRR (Internal Rate of Return):</strong> ${irr}%<br><br>
+        <em>This is a simplified demo using DCF/ARIMA principles. Real tool uses BigQuery & Statsmodels for precise modeling.</em>
+    `;
+}
+// ========== Gas Leakage Lightbox ==========
+const gasLeakCard = document.querySelector('[data-lightbox="gas-leak"]');
+const gasLeakLightbox = document.getElementById('lightbox-gas-leak');
+const closeGasLeak = gasLeakLightbox.querySelector('.close-lightbox');
+
+gasLeakCard.querySelector('.demo-btn').addEventListener('click', () => {
+    gasLeakLightbox.classList.add('active');
+});
+
+closeGasLeak.addEventListener('click', () => {
+    gasLeakLightbox.classList.remove('active');
+});
+
+gasLeakLightbox.addEventListener('click', (e) => {
+    if (e.target === gasLeakLightbox) {
+        gasLeakLightbox.classList.remove('active');
+    }
+});

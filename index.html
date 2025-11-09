@@ -19,6 +19,7 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#dashboards" class="nav-link">Dashboards</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#education" class="nav-link">Education</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -172,43 +173,130 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Automated Gas Leakage Detection System</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">YOLOv12</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                    </div>
-                    <p>Built a real-time gas leak detection system using YOLOv12, monitoring 10,000 gas drums in a production line. Developed a Streamlit-based front-end integrated with a Flask API for real-time alerts and monitoring.</p>
-                </div>
+                <!-- Automated Gas Leakage Detection System -->
+<div class="project-card" data-lightbox="gas-leak">
+    <div class="project-header">
+        <h3>Automated Gas Leakage Detection System</h3>
+        <div class="project-tech">
+            <span class="tech-tag">Roboflow</span>
+            <span class="tech-tag">YOLOv12</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Docker</span>
+        </div>
+    </div>
+    <p>Built a real-time gas leak detection system using YOLOv12, monitoring 10,000 gas drums in a production line. Developed a Streamlit-based front-end integrated with a Flask API for real-time alerts and monitoring.</p>
+    <button class="demo-btn">View Screenshots</button>
+</div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>AI-Powered Music Valuation Engine</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">BigQuery</span>
-                            <span class="tech-tag">ARIMA</span>
-                        </div>
-                    </div>
-                    <p>Developed comprehensive calculation algorithms for music catalog valuation, processing royalty data and streaming statistics. Implemented predictive analytics and ARIMA time series modeling for future earnings forecasting.</p>
-                </div>
+                <!-- AI-Powered Music Valuation Engine -->
+<div class="project-card" data-modal="music-valuation">
+    <div class="project-header">
+        <h3>AI-Powered Music Valuation Engine</h3>
+        <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">BigQuery</span>
+            <span class="tech-tag">ARIMA</span>
+            <span class="tech-tag">Statsmodels</span>
+        </div>
+    </div>
+    <p>Developed comprehensive calculation algorithms for music catalog valuation, processing royalty data, streaming statistics, and historical performance to determine track and catalog values using BigQuery data warehousing. Implemented predictive analytics and ARIMA time series modeling for future earnings forecasting based on streaming trends, market data, and artist performance metrics across multiple platforms.</p>
+    <button class="demo-btn">Try Valuation Demo</button>
+</div>
+<!-- Modal for Music Valuation Demo -->
+<div id="modal-music-valuation" class="modal">
+    <div class="modal-content" style="max-width: 600px;">
+        <span class="close-btn">&times;</span>
+        <h3>Music Catalog Valuation Demo</h3>
+        <p>Enter sample data for a music catalog (e.g., Taylor Swift's "1989") to see projected value and earnings forecast.</p>
+        <div class="valuation-form">
+            <label>Artist/Catalog Name:</label>
+            <input type="text" id="artist-name" class="modal-input" placeholder="e.g., Taylor Swift - 1989" value="Taylor Swift - 1989">
+            
+            <label>Current Annual Royalties ($):</label>
+            <input type="number" id="current-royalties" class="modal-input" placeholder="e.g., 500000" value="500000">
+            
+            <label>Avg. Monthly Streams (Spotify):</label>
+            <input type="number" id="monthly-streams" class="modal-input" placeholder="e.g., 10000000" value="10000000">
+            
+            <label>Growth Rate (% per year):</label>
+            <input type="number" id="growth-rate" class="modal-input" step="0.1" placeholder="e.g., 5.5" value="5.5">
+            
+            <button id="val-submit" class="modal-btn">Calculate Value</button>
+        </div>
+        <div id="val-response" class="modal-response">
+            Results will appear here... (e.g., Projected 5-Year Value: $3.2M)
+        </div>
+    </div>
+</div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Personalized AI Bot for Women's Hormonal Health</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">AWS Bedrock</span>
-                            <span class="tech-tag">LLMs</span>
-                            <span class="tech-tag">RAG</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                    </div>
-                    <p>Developed an AI-powered personalized assistant for women's hormonal health, leveraging AWS Bedrock with fine-tuned LLMs. Implemented a RAG-based architecture, enhancing response accuracy by integrating domain-specific knowledge.</p>
+                <!-- AI Customer Support Chatbot -->
+<div class="project-card" data-modal="ecommerce-bot">
+    <div class="project-header">
+        <h3>AI-Powered Customer Support Chatbot</h3>
+        <div class="project-tech">
+            <span class="tech-tag">AWS Bedrock</span>
+            <span class="tech-tag">Fine-tuned LLMs</span>
+            <span class="tech-tag">RAG</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">Python</span>
+        </div>
+    </div>
+    <p>Developed an intelligent customer support chatbot using AWS Bedrock and fine-tuned LLMs. Integrated Retrieval-Augmented Generation (RAG) with product catalogs and FAQs to deliver accurate, context-aware responses. Deployed via Streamlit for real-time interaction.</p>
+    <div style="margin: 0.8rem 0; text-align: center;">
+    <img src="chatbot-icon.png" alt="Chatbot" style="width: 48px; height: 48px;">
+</div>
+    <button class="demo-btn">Try Live Demo</button>
+</div>
+            </div>
+        </div>
+
+        <!-- Modal for E-Commerce Chatbot Demo -->
+<div id="modal-ecommerce-bot" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>AI Customer Support Chatbot – Live Demo</h3>
+        <p>Ask anything about products, shipping, or returns (e.g., "Do you ship to Canada?" or "What is your return policy?"):</p>
+        <input type="text" id="bot-query" class="modal-input" placeholder="Type your question...">
+        <button id="bot-submit" class="modal-btn">Send</button>
+        <div id="bot-response" class="modal-response">Response will appear here...</div>
+    </div>
+</div>
+    </section>
+    <!-- Lightbox for Gas Leakage Screenshots -->
+<div id="lightbox-gas-leak" class="lightbox-gallery">
+    <div class="lightbox-content">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-images">
+            <img src="gas-leak-dashboard1.jpg" alt="Line 9 Analysis Report" class="lightbox-img">
+            <p class="lightbox-caption">Line 9 Analysis Report – Defect Comparison & Distribution</p>
+
+            <img src="gas-leak-dashboard2.jpg" alt="Tank Leak Line 9" class="lightbox-img">
+            <p class="lightbox-caption">Tank Leak Line 9 – Leak Summary, Yield, and Diagram</p>
+        </div>
+    </div>
+</div>
+
+    <!-- Power BI Dashboards Section (Unchanged) -->
+    <section id="dashboards" class="dashboards">
+        <div class="container">
+            <h2 class="section-title">Power BI Dashboards</h2>
+            <p class="section-description">
+                Interactive dashboards built at Rheem Manufacturing to monitor end-of-line failures, failure reasons, and key KPIs.
+            </p>
+            <div class="dashboards-grid">
+                <div class="dashboard-card">
+                    <a href="powerbi-dashboard1.png" target="_blank" class="dashboard-link">
+                        <img src="powerbi-dashboard1.png" alt="Power BI Dashboard - End of Line Failures Overview" class="dashboard-image">
+                    </a>
+                    <p>Monthly failure trends, top 15 reasons, and key performance metrics.</p>
+                </div>
+                <div class="dashboard-card">
+                    <a href="powerbi-dashboard2.png" target="_blank" class="dashboard-link">
+                        <img src="powerbi-dashboard2.png" alt="Power BI Dashboard - Top Failure Reasons Pie Chart" class="dashboard-image">
+                    </a>
+                    <p>Pie chart of top 15 failure reasons with detailed ranking table.</p>
                 </div>
             </div>
         </div>
@@ -369,7 +457,7 @@
     <!-- Footer -->
     <footer class="footer">
     <div class="container">
-        <p>&copy; 2024 Ishrath Jahan. All rights reserved.</p>
+        <p>&copy; 2025 Ishrath Jahan. All rights reserved.</p>
         <p>Data Science Professional | AI/ML Specialist</p>
 
         <!-- Social Media Icons -->

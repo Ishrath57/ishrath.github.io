@@ -319,6 +319,7 @@ section {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .project-card:hover {
@@ -351,6 +352,89 @@ section {
 .project-card p {
     color: #374151;
     line-height: 1.6;
+}
+
+/* New Styles for Demo Button and Modal */
+.demo-btn {
+    background-color: #1e40af;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.demo-btn:hover {
+    background-color: #3b82f6;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 500px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #374151;
+}
+
+.close-btn:hover {
+    color: #1e40af;
+}
+
+.modal-input {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid #dbeafe;
+    border-radius: 6px;
+}
+
+.modal-btn {
+    background-color: #1e40af;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-btn:hover {
+    background-color: #3b82f6;
+}
+
+.modal-response {
+    color: #374151;
+    margin-top: 1rem;
+    font-style: italic;
 }
 
 /* Skills Section */
@@ -656,4 +740,229 @@ section {
     .contact-grid {
         grid-template-columns: 1fr;
     }
+
+    .modal-content {
+        width: 85%; /* Adjust modal width for mobile */
+    }
+}
+
+/* ---------- Dashboards Section ---------- */
+.dashboards {
+    background-color: #f8fafc;
+    padding: 100px 0;
+}
+
+.dashboards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    transition: transform .3s ease;
+    text-align: center;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+}
+
+.dashboard-link {
+    display: block;
+    cursor: zoom-in;
+}
+
+.dashboard-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-card p {
+    padding: 0.8rem 1rem;
+    font-size: .95rem;
+    color: #4b5563;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;   /* ← This adds space BELOW the sentence */
+    font-size: 1.1rem;
+    color: #374151;
+}
+
+/* Project Gallery Styles */
+.project-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gallery-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.gallery-link:hover {
+    transform: translateY(-2px);
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-link p {
+    font-size: 0.9rem;
+    color: #374151;
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ---------- Gas-Leakage Gallery – Small Thumbnails ---------- */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* smaller min-width */
+    gap: 0.8rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.project-gallery .gallery-link {
+    text-align: center;
+    display: block;
+}
+
+.project-gallery .gallery-image {
+    max-width: 100%;
+    height: 150px;               /* ← smaller height */
+    object-fit: contain;         /* show full image, no crop */
+    background: #fff;
+    padding: 6px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+    transition: transform .2s ease;
+}
+
+.project-gallery .gallery-link:hover .gallery-image {
+    transform: scale(1.03);
+}
+
+.project-gallery p {
+    font-size: 0.82rem;
+    margin: 0.4rem 0 0;
+    color: #4b5563;
+    line-height: 1.3;
+}
+/* Music Valuation Demo Styles */
+.valuation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.valuation-form label {
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.25rem;
+}
+
+.valuation-form input {
+    padding: 0.75rem;
+    border: 1px solid #dbeafe;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#val-response {
+    background: #f0f9ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#val-response strong {
+    color: #1e40af;
+}
+/* ---------- Lightbox Gallery ---------- */
+.lightbox-gallery {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.lightbox-gallery.active {
+    display: flex;
+}
+
+.lightbox-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 12px; right: 18px;
+    font-size: 32px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-lightbox:hover {
+    color: #e11d48;
+}
+
+.lightbox-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.lightbox-img {
+    width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.lightbox-caption {
+    text-align: center;
+    font-size: 1rem;
+    color: #374151;
+    margin-top: 0.5rem;
+    font-style: italic;
 }
