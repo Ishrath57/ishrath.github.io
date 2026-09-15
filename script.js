@@ -352,65 +352,7 @@ function sendBotQuery() {
     }, 800);
 }
 });
-// ========== Music Valuation Demo Modal ==========
-const musicModal = document.getElementById('modal-music-valuation');
-const openMusicBtn = document.querySelector('[data-modal="music-valuation"] .demo-btn');
-const closeMusicBtn = musicModal.querySelector('.close-btn');
-const valSubmit = document.getElementById('val-submit');
-const valResponse = document.getElementById('val-response');
 
-// Open modal
-openMusicBtn.addEventListener('click', () => {
-    musicModal.style.display = 'block';
-});
-
-// Close modal
-closeMusicBtn.addEventListener('click', () => {
-    musicModal.style.display = 'none';
-});
-window.addEventListener('click', (e) => {
-    if (e.target === musicModal) {
-        musicModal.style.display = 'none';
-    }
-});
-
-// Valuation Calculation (Simplified ARIMA/DCF Simulation)
-valSubmit.addEventListener('click', calculateValuation);
-
-function calculateValuation() {
-    const artist = document.getElementById('artist-name').value || 'Unknown Catalog';
-    const royalties = parseFloat(document.getElementById('current-royalties').value) || 0;
-    const streams = parseFloat(document.getElementById('monthly-streams').value) || 0;
-    const growth = parseFloat(document.getElementById('growth-rate').value) || 0;
-
-    if (royalties <= 0 || streams <= 0) {
-        valResponse.innerHTML = '<em style="color: red;">Please enter valid positive numbers.</em>';
-        return;
-    }
-
-    // Mock ARIMA forecast: Project 5-year earnings (growth compounded, streams-to-royalty conversion ~$0.004/stream)
-    const streamRoyalties = streams * 12 * 0.004; // Annual from streams
-    const totalCurrent = royalties + streamRoyalties;
-    const discountRate = 0.08; // Industry standard WACC for music catalogs
-    let futureValue = 0;
-
-    for (let year = 1; year <= 5; year++) {
-        const projected = totalCurrent * Math.pow(1 + growth / 100, year);
-        futureValue += projected / Math.pow(1 + discountRate, year);
-    }
-
-    const catalogValue = futureValue * 12; // Multiplier for perpetuity-like value (industry avg ~10-15x)
-    const irr = ((catalogValue / totalCurrent) * 100).toFixed(1); // Simple IRR estimate
-
-    valResponse.innerHTML = `
-        <strong>Catalog:</strong> ${artist}<br>
-        <strong>Current Annual Earnings:</strong> $${totalCurrent.toLocaleString()}<br><br>
-        <strong>5-Year Projected Value (ARIMA Forecast):</strong> $${futureValue.toLocaleString()}<br>
-        <strong>Estimated Catalog Value:</strong> $${catalogValue.toLocaleString()}<br>
-        <strong>Est. IRR (Internal Rate of Return):</strong> ${irr}%<br><br>
-        <em>This is a simplified demo using DCF/ARIMA principles. Real tool uses BigQuery & Statsmodels for precise modeling.</em>
-    `;
-}
 // ========== Gas Leakage Lightbox ==========
 const gasLeakCard = document.querySelector('[data-lightbox="gas-leak"]');
 const gasLeakLightbox = document.getElementById('lightbox-gas-leak');
