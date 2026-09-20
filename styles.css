@@ -1030,3 +1030,85 @@ section {
 @media (max-width: 768px) {
     .case-study { padding: 0.85rem; }
 }
+
+/* End-to-end analytics proof-of-work section */
+.analytics-showcase {
+    margin-top: 2.2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(37, 99, 235, 0.16);
+    border-radius: 14px;
+    background: rgba(248, 250, 252, 0.72);
+}
+.showcase-heading { max-width: 860px; }
+.showcase-heading h3 { margin: 0.25rem 0 0.55rem; font-size: 1.45rem; }
+.showcase-heading p { margin: 0; line-height: 1.6; }
+.showcase-kicker {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2563eb;
+}
+.analytics-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 1.25rem 0;
+}
+.analytics-flow span:not(.flow-arrow) {
+    padding: 0.5rem 0.72rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+.flow-arrow { opacity: 0.55; font-weight: 700; }
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+.showcase-panel {
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+.showcase-panel h4 { margin: 0 0 0.7rem; }
+.showcase-panel ul { margin: 0; padding-left: 1.1rem; }
+.showcase-panel li { margin-bottom: 0.48rem; line-height: 1.45; }
+.sql-proof {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+    gap: 1.2rem;
+    align-items: start;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+.sql-proof h4 { margin: 0.25rem 0 0.5rem; }
+.sql-proof p { margin: 0; line-height: 1.55; }
+.sql-proof pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 8px;
+    background: #111827;
+    color: #f8fafc;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+.showcase-note { margin: 1rem 0 0; font-size: 0.9rem; opacity: 0.82; line-height: 1.5; }
+@media (max-width: 900px) {
+    .showcase-grid, .sql-proof { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+    .analytics-showcase { padding: 1rem; }
+    .flow-arrow { display: none; }
+    .analytics-flow { gap: 0.45rem; }
+}

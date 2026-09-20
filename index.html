@@ -208,6 +208,84 @@
     <button class="demo-btn">Try Live Demo</button>
 </div>
             </div>
+
+            <div class="analytics-showcase">
+                <div class="showcase-heading">
+                    <span class="showcase-kicker">Portfolio Case Study</span>
+                    <h3>Manufacturing & Supply Chain Analytics</h3>
+                    <p>An end-to-end analytics case study showing how SQL, Python, and Power BI can turn production, inventory, supplier, and order data into operational decisions.</p>
+                </div>
+
+                <div class="analytics-flow" aria-label="Analytics workflow">
+                    <span>Business Problem</span><span class="flow-arrow">→</span>
+                    <span>Multi-source Data</span><span class="flow-arrow">→</span>
+                    <span>SQL Analysis</span><span class="flow-arrow">→</span>
+                    <span>Python EDA</span><span class="flow-arrow">→</span>
+                    <span>Power BI</span><span class="flow-arrow">→</span>
+                    <span>Recommendation</span>
+                </div>
+
+                <div class="showcase-grid">
+                    <article class="showcase-panel">
+                        <h4>Business Questions</h4>
+                        <ul>
+                            <li>Which products and production lines have the highest defect rates?</li>
+                            <li>Where are supplier delays creating inventory or backorder risk?</li>
+                            <li>Which SKUs show aging inventory or potential stockout exposure?</li>
+                            <li>What operational trends should teams investigate first?</li>
+                        </ul>
+                    </article>
+                    <article class="showcase-panel">
+                        <h4>SQL & Analytics</h4>
+                        <ul>
+                            <li>Joins across orders, inventory, suppliers, products, and production tables</li>
+                            <li>CTEs and window functions for ranking, rolling trends, and month-over-month analysis</li>
+                            <li>Data-quality checks for missing values, duplicates, and abnormal records</li>
+                            <li>Python EDA for distributions, correlations, anomalies, and root-cause exploration</li>
+                        </ul>
+                    </article>
+                    <article class="showcase-panel">
+                        <h4>Decision Layer</h4>
+                        <ul>
+                            <li>Power BI KPIs for production, defects, inventory, backorders, and supplier performance</li>
+                            <li>Drill-down views to isolate products, suppliers, and periods driving performance</li>
+                            <li>Prioritized recommendations based on risk, trend, and operational impact</li>
+                            <li>Designed with synthetic/illustrative data so the workflow can be shared publicly</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="sql-proof">
+                    <div>
+                        <span class="showcase-kicker">SQL Proof of Work</span>
+                        <h4>Example: Rank high-defect products by month</h4>
+                        <p>Demonstrates CTEs, aggregation, defensive division, and a window function—the kind of SQL used in recurring operational analysis.</p>
+                    </div>
+                    <pre><code>WITH monthly_quality AS (
+    SELECT
+        product_id,
+        DATE_TRUNC('month', production_date) AS month,
+        SUM(units_produced) AS units_produced,
+        SUM(defect_units) AS defect_units
+    FROM production_quality
+    GROUP BY 1, 2
+), ranked AS (
+    SELECT *,
+        defect_units * 1.0 / NULLIF(units_produced, 0) AS defect_rate,
+        DENSE_RANK() OVER (
+            PARTITION BY month
+            ORDER BY defect_units * 1.0 / NULLIF(units_produced, 0) DESC
+        ) AS defect_rank
+    FROM monthly_quality
+)
+SELECT *
+FROM ranked
+WHERE defect_rank &lt;= 5
+ORDER BY month DESC, defect_rank;</code></pre>
+                </div>
+
+                <p class="showcase-note"><strong>Note:</strong> This portfolio case study uses a synthetic data model and illustrative business questions. It is designed to demonstrate analytical workflow without exposing employer-confidential data.</p>
+            </div>
         </div>
 
         <!-- Modal for E-Commerce Chatbot Demo -->
